@@ -17,16 +17,12 @@ year = []
 def printSum(obj):
     start = time.time()
     raw_data = obj.json()
-    #filter out the NULL fields in the data
-    #fucking data isnt filtered and its a shitshow with broken references 
-    #goddamnit
+   
     sum = 0
     for i in range(len(raw_data['data'])):
-        #Ok actually skipping all deals that have NULL
-        #fucking up my dataset
+       
         val = raw_data['data'][i]['TOTALGROSS']
 
-        #iF it actually returns a goddamn value 
         if val != None:
             flo_val = float(val)
             sum += flo_val
